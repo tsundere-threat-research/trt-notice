@@ -15,7 +15,7 @@ detection:
   - process_name:
     - "firefox.exe"
     - "chrome.exe"
-    - "mdedge.exe"
+    - "msedge.exe"
     - "iexplore.exe"
 condition: parent_process_name and process_name
 falsepositives:
