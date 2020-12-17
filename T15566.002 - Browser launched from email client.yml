@@ -1,0 +1,23 @@
+title: T15566.002 - Browser launched from email client
+id: 5b85716b-7a6a-4c63-a835-b27df8163b61
+description: Spearfishing often attempts to lure victims into following a hyperlink to a web resource of some kind; usually a fake website to collect credentials or to download a file with a malicious paylod. This high-level alert attempts to catch instances of link-clicking by watching for process chains that include popular browsers being launched from common email clients.
+author: eschatolic@protonmail.com
+tags:
+  - attack.tactic.initial_access
+  - attack.technique.phishing
+  - attack.sub_technique.spearfish_link
+references:
+  - https://attack.mitre.org/techniques/T1566/002/
+logsource:
+  - product: windows
+detection:
+  - parent_process_name: "outlook.exe"
+  - process_name:
+    - "firefox.exe"
+    - "chrome.exe"
+    - "mdedge.exe"
+    - "iexplore.exe"
+condition: parent_process_name and process_name
+falsepositives:
+  - Links to legitimate websites and files
+level: low
