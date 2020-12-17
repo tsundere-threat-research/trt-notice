@@ -1,2 +1,2 @@
 # trt-notice
-This is a test.
+Notice is a work-in-progress project for Sigma and ATT&CK. More available soon.
